@@ -18,7 +18,12 @@ Usable, but no tests yet.
 
 - [x] Implement FNV
 - [ ] Add specs
-- [ ] Add LICENSE
+- [x] Add LICENSE
 - [ ] Package for hex
 - [ ] Publish to hex
 - [ ] Enjoy!
+
+## LICENSE
+
+This project is released under The MIT License (MIT).
+Check [LICENSE](LICENSE) file for more information.
