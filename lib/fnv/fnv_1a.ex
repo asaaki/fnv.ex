@@ -19,7 +19,7 @@ defmodule FNV.FNV1a do
 
   use Bitwise, only: [{ :bxor, 2 }, { :<<<, 2}]
 
-  for { bit, prime, offset_base } <- Params.all_params do
+  for { bit, prime, offset_basis} <- Params.all_params do
     function_name = :"hash_#{bit}"
 
     @doc """
@@ -32,7 +32,7 @@ defmodule FNV.FNV1a do
         #=> <integer value>
     """
     def unquote(function_name)(data) when is_binary(data) do
-      hash(unquote(bit), unquote(prime), unquote(offset_base), data)
+      hash(unquote(bit), unquote(prime), unquote(offset_basis), data)
     end
   end
 

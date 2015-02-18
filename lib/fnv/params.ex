@@ -1,6 +1,8 @@
 defmodule FNV.Params do
   use Bitwise, only: [{:<<<, 2}]
 
+  @moduledoc "Support module, not intended to be used directly"
+
   # Supported output lengths
   @bits [32, 64, 128, 256, 512, 1024]
 
@@ -28,26 +30,28 @@ defmodule FNV.Params do
   @params List.zip([@bits, @primes, @offset_bases])
 
   @doc """
-  Returns the prime and offset base for the given bit length (must be one of #{inspect @bits}).
+  Returns the prime and offset basisfor the given bit length (must be one of #{inspect @bits}).
   For invalid values it returns an empty dict/list.
 
   ## Examples
 
-      FNV.Params.bits(64)
-      #=> [prime: 1099511628211, offset_base: 14695981039346656037]
+      FNV.Params.params_for(64)
+      #=> [prime: 1099511628211, offset_basis: 14695981039346656037]
 
-      FNV.Params.bits(99)
+      FNV.Params.params_for(99)
       #=> []
   """
   def params_for(desired_bit_length)
-  for { bit, prime, offset_base } <- @params do
+  for { bit, prime, offset_basis} <- @params do
     def params_for(unquote(bit)) do
-      [prime: unquote(prime), offset_base: unquote(offset_base)]
+      [prime: unquote(prime), offset_basis: unquote(offset_basis)]
     end
   end
   def params_for(_), do: []
 
+  @doc "Returns a list of all supported bit lengths"
   def supported_bit_lengths, do: @bits
 
+  @doc "Returns a list of all necessary data for calculating the hashes (bit length, prime and offset basis)"
   def all_params, do: @params
 end
