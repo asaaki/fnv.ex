@@ -1,5 +1,6 @@
 defmodule FNV.Params do
   use Bitwise, only: [{:<<<, 2}]
+  @compile { :inline }
 
   @moduledoc "Support module, not intended to be used directly"
 

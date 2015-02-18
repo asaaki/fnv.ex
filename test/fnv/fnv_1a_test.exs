@@ -58,10 +58,9 @@ defmodule FNV_FNV1a_Test do
 
   for { bits, output_list } <- List.zip([outputs_bits, @test_outputs_hex]) do
     test_cases = List.zip([input_data, output_list]) |> Enum.with_index
-    function_call = :"hex_#{bits}"
     for { { input, output }, index } <- test_cases do
       test "#{module_under_test} with #{bits} bits, example #{index + 1}" do
-        assert unquote(module_under_test).unquote(function_call)(unquote(input)) == unquote(output)
+        assert unquote(module_under_test).hex(unquote(input), unquote(bits)) == unquote(output)
       end
     end
   end
