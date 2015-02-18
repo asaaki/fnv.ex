@@ -27,9 +27,9 @@ Usable, but no tests yet.
 ## ToDo
 
 - [x] Implement FNV
-- [ ] Add specs
+- [x] Add specs
 - [x] Add LICENSE
-- [ ] Package for hex
+- [x] Package for hex
 - [ ] Publish to hex
 - [ ] Enjoy!
 
