@@ -14,6 +14,11 @@ More details and algorithm specification at <http://www.isthe.com/chongo/tech/co
 
 Usable, but no tests yet.
 
-## ...
+## ToDo
 
-_WIP_
+- [x] Implement FNV
+- [ ] Add specs
+- [ ] Add LICENSE
+- [ ] Package for hex
+- [ ] Publish to hex
+- [ ] Enjoy!
