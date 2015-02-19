@@ -4,7 +4,7 @@ defmodule FNV.Mixfile do
   def project do
     [
       app:           :fnv,
-      version:       "0.1.0",
+      version:       "0.2.0",
       elixir:        "~> 1.0",
       deps:          deps,
       package:       package,
