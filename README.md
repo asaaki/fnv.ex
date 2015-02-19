@@ -20,6 +20,10 @@ Pure Elixir implementation of **Fowler–Noll–Vo hash functions**
 
 More details and algorithm specification at <http://www.isthe.com/chongo/tech/comp/fnv/index.html>.
 
+## Documentation
+
+Can be found at <http://hexdocs.pm/fnv>.
+
 ## LICENSE
 
 This project is released under The MIT License (MIT).
