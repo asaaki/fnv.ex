@@ -82,32 +82,12 @@ defmodule FNV.Algo do
     end
   end
 
-  for { bit, prime, offset_basis} <- FNV.Params.all_params do
-    function_name = :"hash#{bit}"
-
-    @doc false
-    def unquote(function_name)(callback_module, data) do
-      apply(callback_module, :calculate_hash, [unquote(bit), unquote(prime), unquote(offset_basis), data])
-    end
-  end
-
   @doc false
   for { bit, _, _ } <- FNV.Params.all_params do
     hex_digits = div(bit, 4) # 2 digits = 1 byte ~> 1 digit = 1 "halfbyte" (8 / 2 = 4 bits per digit)
 
     def hex(callback_module, data, unquote(bit)) do
       hash(callback_module, data, unquote(bit)) |> Hexate.encode(unquote(hex_digits))
-    end
-  end
-
-  for { bit, _, _ } <- FNV.Params.all_params do
-    function_name = :"hex#{bit}"
-    hasher        = :"hash#{bit}"
-    hex_digits    = div(bit, 4) # 2 digits = 1 byte ~> 1 digit = 1 "halfbyte" (8 / 2 = 4 bits per digit)
-
-    @doc false
-    def unquote(function_name)(callback_module, data) do
-      unquote(hasher)(callback_module, data) |> Hexate.encode(unquote(hex_digits))
     end
   end
 end
