@@ -1,21 +1,13 @@
 sudo: false
 
-language: erlang
+language: elixir
+
+elixir:
+  - 1.0.3
 
 otp_release:
   - 17.4
   - 17.3
-
-before_install:
-  - wget http://s3.hex.pm/builds/elixir/v1.0.3.zip
-  - unzip -d elixir v1.0.3.zip
-
-before_script:
-  - export PATH=`pwd`/elixir/bin:$PATH
-  - mix local.hex --force
-  - mix deps.get
-
-script: mix test
 
 after_script:
   - MIX_ENV=docs mix inch.report
