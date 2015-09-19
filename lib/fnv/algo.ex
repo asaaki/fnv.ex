@@ -84,10 +84,8 @@ defmodule FNV.Algo do
 
   @doc false
   for { bit, _, _ } <- FNV.Params.all_params do
-    hex_digits = div(bit, 4) # 2 digits = 1 byte ~> 1 digit = 1 "halfbyte" (8 / 2 = 4 bits per digit)
-
     def hex(callback_module, data, unquote(bit)) do
-      hash(callback_module, data, unquote(bit)) |> Hexate.encode(unquote(hex_digits))
+      <<hash(callback_module, data, unquote(bit))::unquote(bit)>> |> Base.encode16(case: :lower)
     end
   end
 end

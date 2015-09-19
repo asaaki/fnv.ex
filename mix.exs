@@ -50,7 +50,6 @@ defmodule FNV.Mixfile do
 
   defp deps do
     [
-      { :hexate,      "~> 0.5" },
       { :excoveralls, "~> 0.3", only: [:dev, :test] },
       { :poison,      "~> 1.3", only: [:dev, :test] },
       { :ex_doc,      "~> 0.7", only: :docs },
