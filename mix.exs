@@ -1,7 +1,7 @@
 defmodule FNV.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.3.1"
   @project_url "https://github.com/asaaki/fnv.ex"
   @docs_url "http://hexdocs.pm/fnv"
 
