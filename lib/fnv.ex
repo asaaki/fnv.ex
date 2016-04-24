@@ -21,6 +21,8 @@ defmodule FNV do
   ## Further reading
 
   - <http://www.isthe.com/chongo/tech/comp/fnv/index.html>
-  - [http://en.wikipedia.org/wiki/Fowler–Noll–Vo_hash_function](http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function)
+  - [http://en.wikipedia.org/wiki/Fowler–Noll–Vo_hash_function][1]
+
+  [1]: http://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
   """
 end

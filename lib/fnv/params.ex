@@ -1,8 +1,10 @@
 defmodule FNV.Params do
-  use Bitwise, only: [{:<<<, 2}]
-  @compile { :inline }
+  @moduledoc """
+  Support module, not intended to be used directly
+  """
 
-  @moduledoc "Support module, not intended to be used directly"
+  use Bitwise, only: [{:<<<, 2}]
+  @compile {:inline}
 
   # Supported output lengths
   @bits [32, 64, 128, 256, 512, 1024]
