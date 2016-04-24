@@ -1,50 +1,49 @@
 defmodule FNV.Mixfile do
   use Mix.Project
 
+  @version "0.2.1"
+  @project_url "https://github.com/asaaki/ralitobu"
+  @docs_url "http://hexdocs.pm/ralitobu"
+
   def project do
     [
-      app:           :fnv,
-      version:       "0.2.1",
-      elixir:        "~> 1.0",
-      deps:          deps,
-      package:       package,
-      description:   "Pure Elixir implementation of Fowler–Noll–Vo hash functions (FNV-1/FNV-1a)",
-      name:          "fnv",
-      source_url:    "https://github.com/asaaki/fnv.ex",
-      homepage_url:  "http://hexdocs.pm/fnv",
-      docs:          &docs/0,
+      app: :fnv,
+      version: @version,
+      elixir: "~> 1.2",
+      deps: deps,
+      package: package,
+      description: description,
+      source_url: @project_url,
+      homepage_url: @docs_url,
+      docs: &docs/0,
       test_coverage: [tool: ExCoveralls]
     ]
   end
 
-  def application, do: []
+  def application, do: [applications: [:hexate]]
+
+  defp description,
+    do: "Pure Elixir implementation of Fowler–Noll–Vo hash functions (FNV-1/FNV-1a)"
 
   defp package do
     [
       contributors: ["Christoph Grabo"],
       licenses:     ["MIT"],
       links: %{
-        "GitHub" => "https://github.com/asaaki/fnv.ex",
-        "Issues" => "https://github.com/asaaki/fnv.ex/issues",
-        "Docs"   => "http://hexdocs.pm/fnv/"
+        "GitHub" => @project_url,
+        "Docs" => "#{@docs_url}/#{@version}/"
       },
-      files: [
-        "lib",
-        "LICENSE",
-        "Makefile",
-        "mix.exs",
-        "README.md",
-        "src"
-      ]
+      files: package_files
     ]
   end
 
+  defp package_files,
+    do: ~w(lib mix.exs README.md LICENSE)
+
   defp docs do
-    {ref, 0} = System.cmd("git", ["rev-parse", "--verify", "--quiet", "HEAD"])
     [
-      source_ref: ref,
-      readme:     "README.md",
-      main:       "README"
+      extras: ["README.md"], main: "readme",
+      source_ref: "v#{@version}", source_url: @project_url
     ]
   end
 
