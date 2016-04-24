@@ -27,8 +27,8 @@ defmodule FNV.Mixfile do
 
   defp package do
     [
-      contributors: ["Christoph Grabo"],
-      licenses:     ["MIT"],
+      maintainers: ["Christoph Grabo"],
+      licenses: ["MIT"],
       links: %{
         "GitHub" => @project_url,
         "Docs" => "#{@docs_url}/#{@version}/"
