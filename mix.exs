@@ -49,12 +49,13 @@ defmodule FNV.Mixfile do
 
   defp deps do
     [
-      { :hexate,      "~> 0.5" },
-      { :excoveralls, "~> 0.3", only: [:dev, :test] },
-      { :poison,      "~> 1.3", only: [:dev, :test] },
-      { :ex_doc,      "~> 0.7", only: :docs },
-      { :earmark,     "~> 0.1", only: :docs },
-      { :inch_ex,     "~> 0.2", only: :docs }
+      {:hexate, "~> 0.5" },
+
+      {:credo, "~> 0.3", only: [:lint, :ci]},
+      {:ex_doc, "~> 0.11", only: [:docs, :ci]},
+      {:cmark, "~> 0.6", only: [:docs, :ci]},
+      {:inch_ex, "~> 0.5", only: [:docs, :ci]},
+      {:excoveralls, "~> 0.5", only: [:ci]},
     ]
   end
 end
