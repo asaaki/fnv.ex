@@ -2,8 +2,8 @@ defmodule FNV.Mixfile do
   use Mix.Project
 
   @version "0.3.0"
-  @project_url "https://github.com/asaaki/ralitobu"
-  @docs_url "http://hexdocs.pm/ralitobu"
+  @project_url "https://github.com/asaaki/fnv.ex"
+  @docs_url "http://hexdocs.pm/fnv"
 
   def project do
     [
