@@ -10,9 +10,9 @@ defmodule FNV.Mixfile do
       app: :fnv,
       version: @version,
       elixir: "~> 1.2",
-      deps: deps,
-      package: package,
-      description: description,
+      deps: deps(),
+      package: package(),
+      description: description(),
       source_url: @project_url,
       homepage_url: @docs_url,
       docs: &docs/0,
@@ -33,7 +33,7 @@ defmodule FNV.Mixfile do
         "GitHub" => @project_url,
         "Docs" => "#{@docs_url}/#{@version}/"
       },
-      files: package_files
+      files: package_files()
     ]
   end
 
