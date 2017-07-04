@@ -20,7 +20,7 @@ defmodule FNV.Mixfile do
     ]
   end
 
-  def application, do: [applications: [:hexate]]
+  def application, do: [applications: []]
 
   defp description,
     do: "Pure Elixir implementation of Fowler–Noll–Vo hash functions (FNV-1/FNV-1a)"
