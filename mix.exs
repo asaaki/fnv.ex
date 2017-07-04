@@ -49,8 +49,6 @@ defmodule FNV.Mixfile do
 
   defp deps do
     [
-      {:hexate, "~> 0.5" },
-
       {:credo, "~> 0.3", only: [:lint, :ci]},
       {:ex_doc, "~> 0.11", only: [:docs, :ci]},
       {:cmark, "~> 0.6", only: [:docs, :ci]},

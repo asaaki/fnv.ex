@@ -5,7 +5,7 @@ defmodule FNV.FNV1a do
   Collection of functions to calculate a FNV-1 hash for different bit lengths.
   """
 
-  use FNV.Algo
+  @behaviour FNV.Algo
   @compile {:inline}
 
   def calculate_hash(_, _, current_hash, <<>>),

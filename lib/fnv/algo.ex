@@ -3,10 +3,9 @@ defmodule FNV.Algo do
   Implemenation of generic functions for hash calculations.
   """
 
-  use Behaviour
   alias FNV.Params
 
-  defcallback calculate_hash(
+  @callback calculate_hash(
     bits :: integer, prime :: integer, current_hash :: integer, binary_data :: binary
   ) :: integer
 
@@ -114,13 +113,8 @@ defmodule FNV.Algo do
 
   @doc false
   for {bit, _, _} <- Params.all_params do
-    # 2 digits = 1 byte ~> 1 digit = 1 "halfbyte" (8 / 2 = 4 bits per digit)
-    hex_digits = div(bit, 4)
-
     def hex(callback_module, data, unquote(bit)) do
-      callback_module
-      |> hash(data, unquote(bit))
-      |> Hexate.encode(unquote(hex_digits))
+      <<hash(callback_module, data, unquote(bit))::unquote(bit)>> |> Base.encode16(case: :lower)
     end
   end
 end
