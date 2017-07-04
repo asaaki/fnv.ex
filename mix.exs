@@ -9,7 +9,7 @@ defmodule FNV.Mixfile do
     [
       app: :fnv,
       version: @version,
-      elixir: "~> 1.2",
+      elixir: "~> 1.4",
       deps: deps(),
       package: package(),
       description: description(),
