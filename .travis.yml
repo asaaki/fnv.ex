@@ -10,14 +10,20 @@ otp_release:
   - 19.3
   - 18.2
 
+cache:
+  directories:
+    - $HOME/.hex
+
 before_install:
   - kerl list installations
   - export MIX_ENV=ci
 
 after_script:
   - mix credo --strict
-  - mix hex.outdated
+  - mix xref warnings
+  - mix xref unreachable
   - mix inch.report
+  - mix hex.outdated
 
 after_success:
   - mix coveralls.travis
